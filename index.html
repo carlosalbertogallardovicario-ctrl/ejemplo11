@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroQuest SMR · Componentes electrónicos</title>
+  <meta name="description" content="Aplicación gamificada para repasar componentes electrónicos (resistencias, condensadores, inductores, diodos y transistores) en 1º CFGM SMR. Creada por el profesor Carlos Gallardo, Centro de FP EFA Oretana.">
+  <meta name="author" content="Carlos Gallardo · Centro de FP EFA Oretana">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div id="flash" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <button class="brand" onclick="go('home')" aria-label="Inicio">
+      <span class="brand-logo">⚡</span>
+      <span class="brand-text">Electro<b>Quest</b><small>SMR</small></span>
+    </button>
+    <nav class="nav" id="nav">
+      <button data-view="home" onclick="go('home')"><span>🏠</span><em>Inicio</em></button>
+      <button data-view="lab" onclick="go('lab')"><span>🧪</span><em>Laboratorio</em></button>
+      <button data-view="escape" onclick="go('escape')"><span>🚪</span><em>Escape Room</em></button>
+      <button data-view="badges" onclick="go('badges')"><span>🏆</span><em>Logros</em></button>
+    </nav>
+    <div class="top-right">
+      <button class="player-chip" id="playerChip" onclick="openProfile(false)" aria-label="Perfil"></button>
+      <button class="icon-btn" id="soundBtn" onclick="toggleSound()" aria-label="Sonido">🔊</button>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="footer">
+    <div>⚡ <b>ElectroQuest SMR</b> · Repaso gamificado de componentes electrónicos · 1º CFGM Sistemas Microinformáticos y Redes</div>
+    <div class="footer-credit">👨‍🏫 Profesor creador: <b>Carlos Gallardo</b> · <b>Centro de FP EFA Oretana</b></div>
+  </footer>
+
+  <div id="toasts"></div>
+  <div id="modal"></div>
+
+ <script src="data.js"></script>
+ <script src="app.js"></script>
+
+</body>
+</html>
